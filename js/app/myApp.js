@@ -1,0 +1,1 @@
+angular.module('myApp', [])   //Инициализация модуля myApp

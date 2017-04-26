@@ -1,0 +1,21 @@
+<!DOCTYPE html>	   <!--тип документа-->	
+<html>	
+  <head>
+    <title>Angular приложение</title>	<!--заголовок окна-->
+    <link href = "style.css" rel="stylesheet">    <!--подключаем таблицы стилей-->
+  </head>
+  <body ng-app="myApp" ng-controller="MyController">     <!-- подключение контроллера и определение модуля-->
+		<render-cart class = "cart"></render-cart>		<!-- деректива render-cart-->
+    <h1>Мини интернет магазин</h1> <!-- заголовок-->
+    
+    <ul> <!-- список товаров-->
+      <li ng-repeat="item in items"> <!-- выводим массив данных items с помощью дерективы ng-repeat-->
+        {{item.name}} <!-- выводим содержимое поля name объект item (элемент массива items) -->
+        <button ng-click="addToCart(item)">+</button> <!-- по клику на кнопку запускаем функцию addToCart и предаем в нее объект item-->
+      </li>
+    </ul>		
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>  <!--подключаем ангуляр-->
+		<script type="text/javascript" src = "js/app/myApp.js"></script>	<!--подключаем myApp.js-->	
+		<script type="text/javascript" src = "js/app/cart.js"></script>		<!--подключаем cart.js-->
+  </body>
+</html>
